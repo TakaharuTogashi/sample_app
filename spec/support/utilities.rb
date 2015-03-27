@@ -13,7 +13,7 @@ RSpec::Matchers.define :have_error_message do |message|
 end
 
 def sign_in(user, options={})
-  if option[:no_capybara]
+  if options[:no_capybara]
     # Capybaraを使用していない場合にもサインインする。
     remember_token = User.new_remember_token
     cookies[:remember_token] = remember_token
